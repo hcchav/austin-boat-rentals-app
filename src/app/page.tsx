@@ -20,9 +20,12 @@ export default function Home() {
   const [message, setMessage] = useState('');
   const [consent, setConsent] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  
 
   const [loading, setLoading] = useState(false);
 
@@ -142,7 +145,7 @@ export default function Home() {
             value={form.bookingTime}
             onChange={handleChange}
             required
-          >
+          >c
             <option value="">Select Time</option>
             <option value="13:00">1:00 PM</option>
             <option value="14:00">2:00 PM</option>
